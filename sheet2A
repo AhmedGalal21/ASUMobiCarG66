@@ -1,0 +1,46 @@
+int inputPins[] = {10,9,8,7,6,5,4,3}; 
+int LED = 13 ;
+int convertBinaryToDecimal(long long n)
+{
+      int decimalNumber = 0, i = 0, remainder;
+      while (n!=0)
+      {
+          remainder = n%10;
+          n /= 10;
+          decimalNumber += remainder*pow(2,i);
+          ++i;
+      }
+      return decimalNumber;
+}
+
+// the setup function runs once when you press reset or power the board
+void setup() {
+  
+  pinMode(LED,OUTPUT);
+  for(int index = 0; index < 8; index++) { 
+    pinMode(inputPins[index], INPUT); 
+    }
+    
+
+  
+}
+
+int n ; 
+int val ; 
+void loop() 
+ 
+ { 
+  for(int index = 0; index < 8; index++) {
+   val = digitalRead(inputPins[index]); 
+             if(val == HIGH)
+             n = 1 ; 
+             else 
+             n = 0 ; 
+             n = (n&&11111111);
+             
+             
+             }
+             
+             
+ }
+
